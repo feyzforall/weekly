@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:weekly/product/constants/endpoints.dart';
 import 'package:weekly/product/utils/server_exception.dart';
 

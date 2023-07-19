@@ -21,7 +21,7 @@ void main() {
   group(
     'get articles',
     () {
-      final _mockArticles = {
+      final mockArticles = {
         "status": "string",
         "copyright": "string",
         "numResults": 1,
@@ -35,7 +35,7 @@ void main() {
           mockArticleRepository.fetchPopularArticles(),
         ).thenAnswer(
           (_) async => Right(
-            Articles.fromJson(_mockArticles),
+            Articles.fromJson(mockArticles),
           ),
         ),
         build: () => articlesCubit,
