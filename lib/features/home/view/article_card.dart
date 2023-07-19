@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weekly/features/detail/detail_page.dart';
 import 'package:weekly/features/home/model/articles.dart';
 
 class ArticleCard extends StatelessWidget {
