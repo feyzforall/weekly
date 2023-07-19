@@ -15,7 +15,7 @@ class NetworkManager {
 
   void _initializeDio() {
     dio
-      ..interceptors.add(LogInterceptor(responseBody: true))
+      // ..interceptors.add(LogInterceptor(responseBody: true))
       ..options.baseUrl = Endpoints.baseUrl;
   }
 
@@ -29,9 +29,9 @@ class NetworkManager {
       );
       final String res = jsonEncode(response.data);
 
-      if (kDebugMode) {
-        print('[Network Manager - GET] Server Response: $res');
-      }
+      // if (kDebugMode) {
+      //   print('[Network Manager - GET] Server Response: $res');
+      // }
 
       return response.data;
     } on DioException catch (err) {

@@ -41,29 +41,32 @@ class Article {
   List<String>? geoFacet;
   List<Media>? media;
   int? etaId;
+  String? subtitle;
 
-  Article(
-      {this.uri,
-      this.url,
-      this.id,
-      this.assetId,
-      this.source,
-      this.publishedDate,
-      this.updated,
-      this.section,
-      this.subsection,
-      this.nytdsection,
-      this.adxKeywords,
-      this.column,
-      this.byline,
-      this.type,
-      this.title,
-      this.desFacet,
-      this.orgFacet,
-      this.perFacet,
-      this.geoFacet,
-      this.media,
-      this.etaId});
+  Article({
+    this.uri,
+    this.url,
+    this.id,
+    this.assetId,
+    this.source,
+    this.publishedDate,
+    this.updated,
+    this.section,
+    this.subsection,
+    this.nytdsection,
+    this.adxKeywords,
+    this.column,
+    this.byline,
+    this.type,
+    this.title,
+    this.desFacet,
+    this.orgFacet,
+    this.perFacet,
+    this.geoFacet,
+    this.media,
+    this.etaId,
+    this.subtitle,
+  });
 
   Article.fromJson(Map<String, dynamic> json) {
     uri = json['uri'];
@@ -92,6 +95,21 @@ class Article {
       });
     }
     etaId = json['eta_id'];
+    subtitle = json['abstract'];
+  }
+
+  String get imageUrl {
+    const String mockImage =
+        'https://images.unsplash.com/photo-1681685957465-e4acf30b67ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
+    if (media != null) {
+      if (media!.any((element) => element.mediaMetadata != null)) {
+        return media!.first.mediaMetadata!.firstWhere((element) => element.url != null).url.toString();
+      } else {
+        return mockImage;
+      }
+    } else {
+      return mockImage;
+    }
   }
 }
 

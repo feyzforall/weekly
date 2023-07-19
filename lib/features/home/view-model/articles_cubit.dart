@@ -19,9 +19,16 @@ class ArticlesCubit extends Cubit<ArticlesState> {
           l.message.toString(),
         ),
       ),
-      (r) => emit(
-        ArticlesLoaded(r),
-      ),
+      (r) {
+        _sortByDate(r);
+        emit(ArticlesLoaded(r));
+      },
     );
+  }
+
+  // makaleleri published date adlı parametreye göre sıralayan metod.
+  void _sortByDate(Articles articles) {
+    articles.results
+        ?.sort((a, b) => DateTime.parse(a.publishedDate.toString()).day.compareTo(DateTime.parse(b.publishedDate.toString()).day));
   }
 }
