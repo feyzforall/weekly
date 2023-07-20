@@ -1,6 +1,6 @@
 # weekly
 
-Weekly, MVVM mimarisi ve repository pattern ve Flutter kullanarak geliştirilmiş, son 1 hafta içinde New York Times'da yayımlanan favori makaleleri okuyabileceğiniz bir uygulamadır.  
+Weekly, MVVM mimarisi, repository pattern ve Flutter kullanarak geliştirilmiş, son 1 hafta içinde New York Times'da yayımlanan favori makaleleri okuyabileceğiniz bir uygulamadır.  
 
 ## Teknoloji 
 
